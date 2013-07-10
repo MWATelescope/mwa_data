@@ -1,6 +1,9 @@
 # Generate calibration models from SUMMS and VLA
 # Sources we need: 3C444, HerA, 3C353, VirA, PicA, PKS2356-61, PKS2153-69
 
+# Natasha Hurley-Walker 10/07/2013
+# Todos: get more info from image headers instead of hardcoding
+
 sources=['3C444', 'HerA', '3C353', 'VirA', 'PKS2356-61', 'PKS2153-69', 'PicA']
 
 VLSSr_sources=['3C444', 'HerA', '3C353', 'VirA']
@@ -31,7 +34,9 @@ pos['PicA']='05 19 49.735 -45 46 43.70'
 # VLSSr
 f0=74 #MHz
 psf_rad='75arcsec' # beam in stamp headers
-psf_vol=1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value']
+pix_size='5arcsec' # chosen on the postage stamp server
+beam_area=qa.convert(pix_size,radians)['value']*qa.convert(pix_size,radians)['value']
+psf_vol=beam_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value'])
 
 for source in VLSSr_sources:
   print source
@@ -46,7 +51,9 @@ for source in VLSSr_sources:
 #SUMSS
 f0=843 #MHz
 psf_rad='43arcsec' #1999AJ....117.1578B
-psf_vol=1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value']
+pix_size='5arcsec' # chosen on the postage stamp server
+beam_area=qa.convert(pix_size,radians)['value']*qa.convert(pix_size,radians)['value']
+psf_vol=beam_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value'])
 
 for source in SUMSS_sources:
   print source
@@ -68,7 +75,10 @@ for source in SUMSS_sources:
 # VLA 333 MHz proper observation
 f0=333 #MHz
 psf_rad='30arcsec' # convolving beam in fits history
-psf_vol=1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value']
+pix_size='1.25arcsec' # from the fits header
+beam_area=qa.convert(pix_size,radians)['value']*qa.convert(pix_size,radians)['value']
+psf_vol=beam_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value'])
+
 for source in VLA333_sources:
   print source
   exp=str(psf_vol)+'*IM0/((150/'+str(f0)+')^('+str(spec[source])+'))'
