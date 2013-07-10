@@ -85,11 +85,11 @@ for source in sources:
   outspec=source+'_spec_index.im'
   imhead(imagename=outname,mode='put',hdkey='crval3',hdvalue='150MHz')
   imhead(imagename=outname,mode='put',hdkey='cdelt3',hdvalue='30.72MHz')
-  imhead(imagename=outname,mode='put',hdkey='bunit',hdvalue='Jy/pix')
+  imhead(imagename=outname,mode='put',hdkey='bunit',hdvalue='Jy/pixel')
   imhead(imagename=outname,mode='put',hdkey='crval4',hdvalue='I')
   imhead(imagename=outspec,mode='put',hdkey='crval3',hdvalue='150MHz')
   imhead(imagename=outspec,mode='put',hdkey='cdelt3',hdvalue='30.72MHz')
-  imhead(imagename=outspec,mode='put',hdkey='bunit',hdvalue='Jy/pix')
+  imhead(imagename=outspec,mode='put',hdkey='bunit',hdvalue='Jy/pixel')
   imhead(imagename=outspec,mode='put',hdkey='crval4',hdvalue='I')
   fitsimage=re.sub('.im','.fits',outname)
   exportfits(imagename=outname,fitsimage=fitsimage)
