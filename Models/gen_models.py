@@ -4,11 +4,15 @@
 # Natasha Hurley-Walker 10/07/2013
 # Todos: get more info from image headers instead of hardcoding
 
-sources=['3C444', 'HerA', '3C353', 'VirA', 'PKS2356-61', 'PKS2153-69', 'PicA']
+import re
 
-VLSSr_sources=['3C444', 'HerA', '3C353', 'VirA']
+rmtables('*.im')
+
+VLSSr_sources=['3C444', 'HerA', '3C353', 'VirA','HydA']
 SUMSS_sources=['PKS2356-61', 'PKS2153-69']
 VLA333_sources=['PicA']
+
+sources=VLSSr_sources+SUMSS_sources+VLA333_sources
 
 spec={}
 pos={}
@@ -18,6 +22,7 @@ spec['3C444']=-0.95
 spec['HerA']=-1.0
 spec['3C353']=-0.85
 spec['VirA']=-0.86
+spec['HydA']=-0.83
 spec['PicA']=-0.97
 spec['PKS2356-61']=-0.85
 spec['PKS2153-69']=-0.85
@@ -27,6 +32,7 @@ pos['3C444']='22 14 25.752 -17 01 36.29'
 pos['HerA']='16 51 08.2 +04 59 33'
 pos['3C353']='17 20 28.147 -00 58 47.12'
 pos['VirA']='12 30 49.42338 +12 23 28.0439'
+pos['HydA']='09 18 05.651 -12 05 43.99'
 pos['PKS2356-61']='23 59 04.365 -60 54 59.41'
 pos['PKS2153-69']='21 57 05.98061 -69 41 23.6855'
 pos['PicA']='05 19 49.735 -45 46 43.70'
