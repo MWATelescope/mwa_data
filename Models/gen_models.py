@@ -41,8 +41,8 @@ pos['PicA']='05 19 49.735 -45 46 43.70'
 f0=74 #MHz
 psf_rad='75arcsec' # beam in stamp headers
 pix_size='5arcsec' # chosen on the postage stamp server
-beam_area=qa.convert(pix_size,radians)['value']*qa.convert(pix_size,radians)['value']
-psf_vol=beam_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value'])
+pix_area=qa.convert(pix_size,radians)['value']*qa.convert(pix_size,radians)['value']
+psf_vol=pix_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value'])
 
 for source in VLSSr_sources:
   print source
@@ -56,14 +56,17 @@ for source in VLSSr_sources:
 
 #SUMSS
 f0=843 #MHz
-psf_rad='43arcsec' #1999AJ....117.1578B
-pix_size='5arcsec' # chosen on the postage stamp server
-beam_area=qa.convert(pix_size,radians)['value']*qa.convert(pix_size,radians)['value']
-psf_vol=beam_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value'])
+#psf_rad='43arcsec' #1999AJ....117.1578B
+#pix_size='5arcsec' # chosen on the postage stamp server
+#pix_area=qa.convert(pix_size,radians)['value']*qa.convert(pix_size,radians)['value']
+#psf_vol=pix_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value'])
+
+# Seems SUMSS images are already in Jy/pixel?
 
 for source in SUMSS_sources:
   print source
-  exp=str(psf_vol)+'*IM0/((150/'+str(f0)+')^('+str(spec[source])+'))'
+#  exp=str(psf_vol)+'*IM0/((150/'+str(f0)+')^('+str(spec[source])+'))'
+  exp='IM0/((150/'+str(f0)+')^('+str(spec[source])+'))'
   model='templates/'+source+'_SUMSS.fits'
   outname=source+'.im'
   outspec=source+'_spec_index.im'
@@ -82,8 +85,8 @@ for source in SUMSS_sources:
 f0=333 #MHz
 psf_rad='30arcsec' # convolving beam in fits history
 pix_size='1.25arcsec' # from the fits header
-beam_area=qa.convert(pix_size,radians)['value']*qa.convert(pix_size,radians)['value']
-psf_vol=beam_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value'])
+pix_area=qa.convert(pix_size,radians)['value']*qa.convert(pix_size,radians)['value']
+psf_vol=pix_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value'])
 
 for source in VLA333_sources:
   print source
