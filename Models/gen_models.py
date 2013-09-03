@@ -74,20 +74,13 @@ f0=843 #MHz
 for source in SUMSS_sources:
   print source
 #  exp=str(psf_vol)+'*IM0/((150/'+str(f0)+')^('+str(spec[source])+'))'
-  exp='IM0/((150/'+str(f0)+')^('+str(spec[source])+'))'
+  exp='iif(IM0>=0.25,IM0/((150/'+str(f0)+')^('+str(spec[source])+')),0.0)'
   model='templates/'+source+'_SUMSS.fits'
   outname=source+'.im'
   outspec=source+'_spec_index.im'
   immath(imagename=[model],mode='evalexpr',expr=exp,outfile='new.im')
-  exp=(str(spec[source]))+'*(IM0/IM0)'
+  exp='iif(IM0>=0.25,'+(str(spec[source]))+'*(IM0/IM0),0.0)'
   immath(imagename=[model],mode='evalexpr',expr=exp,outfile='newspec.im')
-
-  ia.open('new.im')
-  ia.calcmask(mask='new.im > 0.5',name='minflux0.5')
-  ia.done()
-  ia.open('newspec.im')
-  ia.calcmask(mask='new.im > 0.5',name='minflux0.5')
-  ia.done()
 
   ia.open('new.im')
   ia.adddegaxes(outfile=outname,spectral=True,stokes='I')
