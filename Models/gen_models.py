@@ -4,12 +4,14 @@
 # Natasha Hurley-Walker 10/07/2013
 # Todos: get more info from image headers instead of hardcoding
 
+# Note that this requires CASA 4+ to run, since CASA3 can't open images without beams in the headers
+
 import re
 
 rmtables('*.im')
 
-VLSSr_sources=['3C444', 'HerA', '3C353', 'VirA','HydA']
-SUMSS_sources=['PKS2356-61', 'PKS2153-69']
+VLSSr_sources=['3C444', 'HerA', '3C353', 'VirA','HydA','3C33']
+SUMSS_sources=['PKS2356-61', 'PKS2153-69', 'PKS0408-65', 'PKS0410-75']
 VLA333_sources=['PicA']
 
 sources=VLSSr_sources+SUMSS_sources+VLA333_sources
@@ -21,11 +23,14 @@ pos={}
 spec['3C444']=-0.95
 spec['HerA']=-1.0
 spec['3C353']=-0.85
+spec['3C33']=-0.85
 spec['VirA']=-0.86
 spec['HydA']=-0.83
 spec['PicA']=-0.97
 spec['PKS2356-61']=-0.85
 spec['PKS2153-69']=-0.85
+spec['PKS0408-65']=-0.85
+spec['PKS0410-75']=-0.85
 
 # Not used in the script, but could be scripted to grab from postage stamp server
 pos['3C444']='22 14 25.752 -17 01 36.29'
@@ -36,6 +41,9 @@ pos['HydA']='09 18 05.651 -12 05 43.99'
 pos['PKS2356-61']='23 59 04.365 -60 54 59.41'
 pos['PKS2153-69']='21 57 05.98061 -69 41 23.6855'
 pos['PicA']='05 19 49.735 -45 46 43.70'
+pos['PKS0408-65']=''
+pos['PKS0410-75']=''
+pos['3C33']=['01 08 52.854 +13 20 13.75']
 
 # VLSSr
 f0=74 #MHz
@@ -66,13 +74,14 @@ f0=843 #MHz
 for source in SUMSS_sources:
   print source
 #  exp=str(psf_vol)+'*IM0/((150/'+str(f0)+')^('+str(spec[source])+'))'
-  exp='IM0/((150/'+str(f0)+')^('+str(spec[source])+'))'
+  exp='iif(IM0>=0.25,IM0/((150/'+str(f0)+')^('+str(spec[source])+')),0.0)'
   model='templates/'+source+'_SUMSS.fits'
   outname=source+'.im'
   outspec=source+'_spec_index.im'
   immath(imagename=[model],mode='evalexpr',expr=exp,outfile='new.im')
-  exp=(str(spec[source]))+'*(IM0/IM0)'
+  exp='iif(IM0>=0.25,'+(str(spec[source]))+'*(IM0/IM0),0.0)'
   immath(imagename=[model],mode='evalexpr',expr=exp,outfile='newspec.im')
+
   ia.open('new.im')
   ia.adddegaxes(outfile=outname,spectral=True,stokes='I')
   ia.close()
