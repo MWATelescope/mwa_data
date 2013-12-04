@@ -6,11 +6,15 @@
 
 # Note that this requires CASA 4+ to run, since CASA3 can't open images without beams in the headers
 
-import re
+import re, math, os, glob
 
 rmtables('*.im')
 
-VLSSr_sources=['3C444', 'HerA', '3C353', 'VirA','HydA','3C33']
+filelist = glob.glob("*.fits")
+for f in filelist:
+    os.remove(f)
+
+VLSSr_sources=['3C444', 'HerA', '3C353', 'VirA','HydA','3C33', '3C161', 'PKS0442-28']
 SUMSS_sources=['PKS2356-61', 'PKS2153-69', 'PKS0408-65', 'PKS0410-75']
 VLA333_sources=['PicA']
 
@@ -31,6 +35,8 @@ spec['PKS2356-61']=-0.85
 spec['PKS2153-69']=-0.85
 spec['PKS0408-65']=-0.85
 spec['PKS0410-75']=-0.85
+spec['3C161']=-0.85
+spec['PKS0442-28']=-0.85
 
 # Not used in the script, but could be scripted to grab from postage stamp server
 pos['3C444']='22 14 25.752 -17 01 36.29'
@@ -44,6 +50,8 @@ pos['PicA']='05 19 49.735 -45 46 43.70'
 pos['PKS0408-65']=''
 pos['PKS0410-75']=''
 pos['3C33']=['01 08 52.854 +13 20 13.75']
+pos['3C161']=['06 27 10.0960 -05 53 04.768']
+pos['PKS0442-28']=['04 44 37.707 -28 09 54.41']
 
 # VLSSr
 f0=74 #MHz
@@ -54,7 +62,8 @@ psf_vol=pix_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad
 
 for source in VLSSr_sources:
   print source
-  exp=str(psf_vol)+'*IM0/((150/'+str(f0)+')^('+str(spec[source])+'))'
+# psf volume calculation seems to be out by a factor of pi, so add in by hand
+  exp=str(psf_vol)+'*IM0/('+str(math.pi)+'*((150/'+str(f0)+')^('+str(spec[source])+')))'
   model='templates/'+source+'_VLSS.fits'
   outname=source+'.im'
   outspec=source+'_spec_index.im'
@@ -64,18 +73,24 @@ for source in VLSSr_sources:
 
 #SUMSS
 f0=843 #MHz
-#psf_rad='43arcsec' #1999AJ....117.1578B
-#pix_size='5arcsec' # chosen on the postage stamp server
-#pix_area=qa.convert(pix_size,radians)['value']*qa.convert(pix_size,radians)['value']
-#psf_vol=pix_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value'])
-
-# Seems SUMSS images are already in Jy/pixel?
 
 for source in SUMSS_sources:
   print source
-#  exp=str(psf_vol)+'*IM0/((150/'+str(f0)+')^('+str(spec[source])+'))'
-  exp='iif(IM0>=0.25,IM0/((150/'+str(f0)+')^('+str(spec[source])+')),0.0)'
   model='templates/'+source+'_SUMSS.fits'
+  importfits(fitsimage=model,imagename='test.im')
+  dec=imhead('test.im',mode='get',hdkey='crval2')['value']
+# psf = 43"x43" csc|delta| according to 1999AJ....117.1578B
+  cosecdec=abs(43.0/math.sin(dec))
+  psf_bmaj='43arcsec'
+  psf_bmin=str(cosecdec)+'arcsec'
+  pix_size='5arcsec' # chosen on the postage stamp server
+  pix_area=qa.convert(pix_size,radians)['value']*qa.convert(pix_size,radians)['value']
+# psf volume calculation seems to be out by a factor of 13.6, so add in by hand
+  psf_vol=13.6*pix_area/(1.1331*qa.convert(psf_bmaj,radians)['value']*qa.convert(psf_bmin,radians)['value'])
+  rmtables('test.im')
+
+# Only include real sources
+  exp='iif(IM0>=0.25,'+str(psf_vol)+'*IM0/((150/'+str(f0)+')^('+str(spec[source])+')),0.0)'
   outname=source+'.im'
   outspec=source+'_spec_index.im'
   immath(imagename=[model],mode='evalexpr',expr=exp,outfile='new.im')
@@ -95,7 +110,8 @@ f0=333 #MHz
 psf_rad='30arcsec' # convolving beam in fits history
 pix_size='1.25arcsec' # from the fits header
 pix_area=qa.convert(pix_size,radians)['value']*qa.convert(pix_size,radians)['value']
-psf_vol=pix_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value'])
+# psf volume calculation seems to be out by a factor of 5, so add in by hand
+psf_vol=5.0*pix_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value'])
 
 for source in VLA333_sources:
   print source
