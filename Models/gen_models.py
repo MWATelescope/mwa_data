@@ -62,8 +62,7 @@ psf_vol=pix_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad
 
 for source in VLSSr_sources:
   print source
-# psf volume calculation seems to be out by a factor of pi, so add in by hand
-  exp=str(psf_vol)+'*IM0/('+str(math.pi)+'*((150/'+str(f0)+')^('+str(spec[source])+')))'
+  exp=str(psf_vol)+'*IM0*((150/'+str(f0)+')^('+str(spec[source])+'))'
   model='templates/'+source+'_VLSS.fits'
   outname=source+'.im'
   outspec=source+'_spec_index.im'
@@ -85,8 +84,7 @@ for source in SUMSS_sources:
   psf_bmin=str(cosecdec)+'arcsec'
   pix_size='5arcsec' # chosen on the postage stamp server
   pix_area=qa.convert(pix_size,radians)['value']*qa.convert(pix_size,radians)['value']
-# psf volume calculation seems to be out by a factor of 13.6, so add in by hand
-  psf_vol=13.6*pix_area/(1.1331*qa.convert(psf_bmaj,radians)['value']*qa.convert(psf_bmin,radians)['value'])
+  psf_vol=pix_area/(1.1331*qa.convert(psf_bmaj,radians)['value']*qa.convert(psf_bmin,radians)['value'])
   rmtables('test.im')
 
 # Only include real sources
@@ -110,12 +108,12 @@ f0=333 #MHz
 psf_rad='30arcsec' # convolving beam in fits history
 pix_size='1.25arcsec' # from the fits header
 pix_area=qa.convert(pix_size,radians)['value']*qa.convert(pix_size,radians)['value']
-# psf volume calculation seems to be out by a factor of 5, so add in by hand
-psf_vol=5.0*pix_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value'])
+psf_vol=pix_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad,radians)['value'])
 
 for source in VLA333_sources:
   print source
-  exp=str(psf_vol)+'*IM0/((150/'+str(f0)+')^('+str(spec[source])+'))'
+#  exp=str(psf_vol)+'*IM0/((150/'+str(f0)+')^('+str(spec[source])+'))'
+  exp=str(psf_vol)+'*IM0*((150/'+str(f0)+')^('+str(spec[source])+'))'
   model='templates/'+source+'_VLA333.fits'
   outname=source+'.im'
   outspec=source+'_spec_index.im'
