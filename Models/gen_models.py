@@ -6,7 +6,7 @@
 
 # Note that this requires CASA 4+ to run, since CASA3 can't open images without beams in the headers
 
-import re, math, os, glob
+import re, math, os, glob, pyfits
 
 rmtables('*.im')
 
@@ -121,6 +121,9 @@ for source in VLA333_sources:
   exp=(str(spec[source]))+'*(IM0/IM0)'
   immath(imagename=[model],mode='evalexpr',expr=exp,outfile=outspec)
 
+# Delete excess keywords that cause problems in later versions of pywcs
+dead_keywords=['PC001001', 'PC002001', 'PC003001', 'PC004001', 'PC001002', 'PC002002', 'PC003002', 'PC004002', 'PC001003', 'PC002003', 'PC003003', 'PC004003', 'PC001004', 'PC002004', 'PC003004', 'PC004004']
+
 # Update headers and export all images
 for source in sources:
   outname=source+'.im'
@@ -128,12 +131,23 @@ for source in sources:
   imhead(imagename=outname,mode='put',hdkey='crval3',hdvalue='150MHz')
   imhead(imagename=outname,mode='put',hdkey='cdelt3',hdvalue='30.72MHz')
   imhead(imagename=outname,mode='put',hdkey='bunit',hdvalue='Jy/pixel')
-  imhead(imagename=outname,mode='put',hdkey='crval4',hdvalue='I')
   imhead(imagename=outspec,mode='put',hdkey='crval3',hdvalue='150MHz')
   imhead(imagename=outspec,mode='put',hdkey='cdelt3',hdvalue='30.72MHz')
   imhead(imagename=outspec,mode='put',hdkey='bunit',hdvalue='Jy/pixel')
-  imhead(imagename=outspec,mode='put',hdkey='crval4',hdvalue='I')
+# 1s not Is in the latest version of CASA
+  currentstokes=imhead(imagename=outname,mode='get',hdkey='crval4')
+  if currentstokes['value']!=1.0:
+    imhead(imagename=outname,mode='put',hdkey='crval4',hdvalue='I')
+    imhead(imagename=outspec,mode='put',hdkey='crval4',hdvalue='I')
+# Delete excess keywords that cause problems in later versions of pywcs
   fitsimage=re.sub('.im','.fits',outname)
   exportfits(imagename=outname,fitsimage=fitsimage)
+  hdu_in=pyfits.open(fitsimage,mode='update')
+  for fitskey in dead_keywords:
+    del hdu_in[0].header[fitskey]
+  hdu_in.flush()
   fitsimage=re.sub('.im','.fits',outspec)
   exportfits(imagename=outspec,fitsimage=fitsimage)
+  hdu_in=pyfits.open(fitsimage,mode='update')
+  for fitskey in dead_keywords:
+    del hdu_in[0].header[fitskey]
