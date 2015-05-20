@@ -1,0 +1,340 @@
+SIMPLE  =                    T / Standard FITS format                           BITPIX  =                    8 / Character data                                 NAXIS   =                    1 / Text string                                    NAXIS1  =                21363 / Number of characters                           VOTMETA =                    T / Table metadata in VOTable format               EXTEND  =                    T / There are standard extensions                  COMMENT                                                                         COMMENT The data in this primary HDU consists of bytes which                    COMMENT comprise a VOTABLE document.                                            COMMENT The VOTable describes the metadata of the table contained               COMMENT in the following BINTABLE extension.                                    COMMENT Such a BINTABLE extension can be used on its own as a perfectly         COMMENT good table, but the information from this HDU may provide some          COMMENT useful additional metadata.                                             COMMENT There is one following BINTABLE.                                        NTABLE  =                    1 / Number of following BINTABLE HDUs              END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <?xml version='1.0' encoding='UTF-8'?>
+<VOTABLE version='1.1'>
+<!--
+ !  VOTable written by uk.ac.starlink.votable.FitsPlusTableWriter
+ !  Describes BINTABLE extensions in following HDUs
+ !-->
+<RESOURCE>
+<TABLE name="Joined" nrows="26">
+<DESCRIPTION>
+Table of data for CSS and GPS candidates and sources
+</DESCRIPTION>
+<PARAM arraysize="22" datatype="char" name="Warning" value="No center provided++++"/>
+<PARAM arraysize="53" datatype="char" name="Warning" value="Column 'RAJ2000' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="53" datatype="char" name="Warning" value="Column 'DEJ2000' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'n_CG' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="Column 'CG' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="47" datatype="char" name="Warning" value="Column 'k' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'l_Rmag' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'Rmag' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="47" datatype="char" name="Warning" value="Column 'z' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="Column 'n_z' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="Column 'ID' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="Column 'SI1' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="51" datatype="char" name="Warning" value="Column 'e_SI1' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="Column 'SI2' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'Size' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S2.7' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="Column 'S5' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S8.4' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="Column 'S20' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'Simbad' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="51" datatype="char" name="Warning" value="Column 'l_LAS' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="Column 'LAS' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="51" datatype="char" name="Warning" value="Column 'BJmag' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'Imag' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S408' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S843' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'Survey' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="51" datatype="char" name="Warning" value="Column 'Freqs' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="47" datatype="char" name="Warning" value="Column 'N' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'Date' unknown in 'J/MNRAS/416/1135/table7'"/>
+<PARAM arraysize="22" datatype="char" name="Warning" value="No center provided++++"/>
+<PARAM arraysize="51" datatype="char" name="Warning" value="Column 'n_PKS' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'e_S1.4' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S2.3' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'e_S2.3' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S4.8' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'e_S4.8' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S8.6' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'e_S8.6' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="56" datatype="char" name="Warning" value="Column 'SimbadName' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="51" datatype="char" name="Warning" value="Column 'l_LAS' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="Column 'LAS' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="51" datatype="char" name="Warning" value="Column 'BJmag' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'Imag' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S408' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S843' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'Survey' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="51" datatype="char" name="Warning" value="Column 'Freqs' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="47" datatype="char" name="Warning" value="Column 'N' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'Date' unknown in 'J/MNRAS/416/1135/table8'"/>
+<PARAM arraysize="22" datatype="char" name="Warning" value="No center provided++++"/>
+<PARAM arraysize="51" datatype="char" name="Warning" value="Column 'n_PKS' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'e_S1.4' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'e_S2.3' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'e_S4.8' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'e_S8.6' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="56" datatype="char" name="Warning" value="Column 'SimbadName' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'n_CG' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'l_Rmag' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="51" datatype="char" name="Warning" value="Column 'e_SI1' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="Column 'S5' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S8.4' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'Simbad' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'Survey' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="51" datatype="char" name="Warning" value="Column 'Freqs' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="47" datatype="char" name="Warning" value="Column 'N' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'Date' unknown in 'J/MNRAS/416/1135/sample'"/>
+<PARAM arraysize="22" datatype="char" name="Warning" value="No center provided++++"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="Column 'PKS' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="51" datatype="char" name="Warning" value="Column 'n_PKS' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S1.4' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'e_S1.4' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S2.3' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'e_S2.3' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S4.8' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'e_S4.8' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S8.6' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'e_S8.6' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="Column 'SED' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="56" datatype="char" name="Warning" value="Column 'SimbadName' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="73" datatype="char" name="Warning" value="Problem in vc_coo: **no RA** **no DE** for table: J/MNRAS/416/1135/table2"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="Column '_RA' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="73" datatype="char" name="Warning" value="Problem in vc_coo: **no RA** **no DE** for table: J/MNRAS/416/1135/table2"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="Column '_DE' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="53" datatype="char" name="Warning" value="Column 'RAJ2000' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="53" datatype="char" name="Warning" value="Column 'DEJ2000' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'n_CG' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="Column 'CG' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="47" datatype="char" name="Warning" value="Column 'k' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'l_Rmag' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'Rmag' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="47" datatype="char" name="Warning" value="Column 'z' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="Column 'n_z' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="Column 'ID' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="Column 'SI1' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="51" datatype="char" name="Warning" value="Column 'e_SI1' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="Column 'SI2' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'Size' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S2.7' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="Column 'S5' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S8.4' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="Column 'S20' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="52" datatype="char" name="Warning" value="Column 'Simbad' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="51" datatype="char" name="Warning" value="Column 'l_LAS' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="Column 'LAS' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="51" datatype="char" name="Warning" value="Column 'BJmag' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'Imag' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S408' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="Column 'S843' unknown in 'J/MNRAS/416/1135/table2'"/>
+<PARAM arraysize="19" datatype="char" name="votable-version" value="1.99+ (14-Oct-2013)"/>
+<PARAM arraysize="15" datatype="char" name="-ref" value="VIZ554ac3d316a7"/>
+<PARAM arraysize="2" datatype="char" name="-out.max" value="50"/>
+<PARAM arraysize="2" datatype="char" name="queryParameters" value="54">
+<DESCRIPTION>-oc.form=dec
+-out.max=50
+-nav=cat:J/MNRAS/416/1135&amp;tab:{J/MNRAS/416/1135/table7}&amp;tab:{J/MNRAS/416/1135/table8}&amp;tab:{J/MNRAS/416/1135/sample}&amp;tab:{J/MNRAS/416/1135/table2}&amp;key:source=J/MNRAS/416/1135&amp;HTTPPRM:&amp;
+-c.eq=J2000
+-c.r=  2
+-c.u=arcmin
+-c.geom=r
+-source=J/MNRAS/416/1135/table7,J/MNRAS/416/1135/table8,J/MNRAS/416/1135/sample,J/MNRAS/416/1135/table2
+-order=I
+-out=PKS
+-out=n_PKS
+-out=S1.4
+-out=e_S1.4
+-out=S2.3
+-out=e_S2.3
+-out=S4.8
+-out=e_S4.8
+-out=S8.6
+-out=e_S8.6
+-out=SED
+SED=SED
+-out=SimbadName
+-out=_RA
+-out=_DE
+-out=RAJ2000
+-out=DEJ2000
+-out=n_CG
+-out=CG
+-out=k
+-out=l_Rmag
+-out=Rmag
+-out=z
+-out=n_z
+-out=ID
+-out=SI1
+-out=e_SI1
+-out=SI2
+-out=Size
+-out=S2.7
+-out=S5
+-out=S8.4
+-out=S20
+-out=Simbad
+Simbad=Simbad
+-out=l_LAS
+-out=LAS
+-out=BJmag
+-out=Imag
+-out=S408
+-out=S843
+-out=Survey
+-out=Freqs
+-out=N
+-out=Date</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="1" datatype="char" name="CatalogsExamined" value="4">
+<DESCRIPTION>4 catalogues with potential matches were examined.</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="33" datatype="char" name="Match type" value="Pair match; Best match, symmetric">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="3" datatype="char" name="Match algorithm" value="Sky">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="23" datatype="char" name="First input table" value="3: vizier_votable.vot-2"/>
+<PARAM arraysize="12" datatype="char" name="Second input table" value="12: MRC.fits"/>
+<PARAM arraysize="33" datatype="char" name="Match type" value="Pair match; Best match, symmetric">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="3" datatype="char" name="Match algorithm" value="Sky">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="15" datatype="char" name="First input table" value="15: match(3,12)"/>
+<PARAM arraysize="19" datatype="char" name="Second input table" value="13: SUMSSshort.fits"/>
+<FIELD arraysize="10" datatype="char" name="PKS" ucd="meta.id;meta.main">
+<DESCRIPTION>Source name (JHHMM+DDMM)</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="S1.4" precision="2" ucd="phot.flux.density;em.radio.750-1500MHz" unit="Jy" width="5">
+<DESCRIPTION>? 1.4GHz flux density from PKSCat90</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="3" datatype="char" name="SED" ucd="meta.ref.url">
+<DESCRIPTION>Plot the spectrum with SPECFIND (Vollmer et al. 2009, Cat. VIII/85)</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="_RAJ2000" precision="5" ref="J2000" ucd="pos.eq.ra" unit="deg" width="9">
+<DESCRIPTION>Right ascension (FK5, Equinox=J2000.0) (computed by VizieR, not part of the original data)</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="_DEJ2000" precision="5" ref="J2000" ucd="pos.eq.dec" unit="deg" width="9">
+<DESCRIPTION>Declination (FK5, Equinox=J2000.0) (computed by VizieR, not part of the original data)</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="11" datatype="char" name="RAJ2000" ref="J2000" ucd="pos.eq.ra;meta.main" unit="&quot;h:m:s&quot;">
+<DESCRIPTION>Right ascension (J2000)</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="11" datatype="char" name="DEJ2000" ref="J2000" ucd="pos.eq.dec;meta.main" unit="&quot;d:m:s&quot;">
+<DESCRIPTION>Declination (J2000)</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="1" datatype="char" name="n_CG" ucd="meta.ref.url">
+<DESCRIPTION>{\bf S} indicates sources in the final sample</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="1" datatype="char" name="CG" ucd="meta.code">
+<DESCRIPTION>[CG] CSS (Compact Steep Spectrum) or GPS (Gigahertz Peaked Spectrum) source</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="1" datatype="char" name="k" ucd="meta.code">
+<DESCRIPTION>[k] k for known CSS or GPS source previous to this work</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="1" datatype="char" name="l_Rmag" ucd="meta.code.error">
+<DESCRIPTION>Limit flag on Rmag</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="Rmag" precision="1" ucd="phot.mag;em.opt.R" unit="mag" width="4">
+<DESCRIPTION>? R band magnitude from SuperCOSMOS</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="z" precision="4" ucd="src.redshift" width="7">
+<DESCRIPTION>? Photometric or spectroscopic redshift</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="1" datatype="char" name="n_z" ucd="meta.note">
+<DESCRIPTION>[p] p for photometric redshift, else spectroscopic</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="1" datatype="char" name="ID" ucd="src.class">
+<DESCRIPTION>[GQ] Optical counterpart: Galaxy or Quasar</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="SI1" precision="2" ucd="spect.index;meta.modelled" width="5">
+<DESCRIPTION>? Spectral Index {alpha}^fit^_2_ given by our least squares spectral fit across the existing data for each source. For GPS sources, this spectral index is the spectral index above the peak of the radio spectrum</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="e_SI1" precision="1" ucd="stat.error" width="4">
+<DESCRIPTION>? rms uncertainty on SI1</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="SI2" precision="2" ucd="spect.index;em.radio.3-6GHz" width="5">
+<DESCRIPTION>? Selection Spectral Index {alpha}^5^_2.7_ between 2.7 and 5GHz</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="Size" precision="2" ucd="src.morph.scLength" unit="kpc" width="5">
+<DESCRIPTION>? Physical Size</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="S2.7" precision="2" ucd="phot.flux.density;em.radio.1500-3000MHz" unit="Jy" width="5">
+<DESCRIPTION>? 2.7GHz flux density from PKSCat90</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="S5" precision="2" ucd="phot.flux.density;em.radio.3-6GHz" unit="Jy" width="5">
+<DESCRIPTION>? 5GHz flux density from PKSCat90</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="S8.4" precision="2" ucd="phot.flux.density;em.radio.6-12GHz" unit="Jy" width="5">
+<DESCRIPTION>? 8.4GHz flux density from PKSCat90</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="S20" precision="2" ucd="phot.flux.density;em.radio.12-30GHz" unit="Jy" width="5">
+<DESCRIPTION>? 20GHz flux density from AT20G</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="6" datatype="char" name="Simbad" ucd="meta.ref">
+<DESCRIPTION>ask the {\bf\fg{FireBrick}Simbad} data-base about this object</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="9" datatype="char" name="Name"/>
+<FIELD arraysize="10" datatype="char" name="RA_J2000_old" unit="hms"/>
+<FIELD datatype="double" name="RA_J2000" unit="deg">
+<DESCRIPTION>(hmsToDegrees($2))</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="9" datatype="char" name="Dec_J2000_old"/>
+<FIELD datatype="double" name="Dec_J2000" unit="deg">
+<DESCRIPTION>(dmsToDegrees($3))</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="3" datatype="char" name="e_RAJ2000"/>
+<FIELD arraysize="3" datatype="char" name="e_DecJ2000"/>
+<FIELD datatype="float" name="S408"/>
+<FIELD datatype="float" name="e_S408"/>
+<FIELD datatype="double" name="Separation_1" ucd="pos.angDistance" unit="arcsec">
+<DESCRIPTION>Distance between matched objects along a great circle</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="RA" unit="deg">
+<DESCRIPTION>(hmsToDegrees($1))</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="Dec" unit="deg">
+<DESCRIPTION>(dmsToDegrees($2))</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="e_RA"/>
+<FIELD datatype="float" name="e_Dec"/>
+<FIELD datatype="float" name="Sp"/>
+<FIELD datatype="float" name="e_Sp"/>
+<FIELD datatype="float" name="St"/>
+<FIELD datatype="float" name="e_St"/>
+<FIELD datatype="float" name="MajAxis"/>
+<FIELD datatype="float" name="MinAxis"/>
+<FIELD datatype="float" name="PA"/>
+<FIELD datatype="double" name="Separation" ucd="pos.angDistance" unit="arcsec">
+<DESCRIPTION>Distance between matched objects along a great circle</DESCRIPTION>
+</FIELD>
+<!-- Dummy VOTable - no DATA element -->
+</TABLE>
+</RESOURCE>
+</VOTABLE>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             XTENSION= 'BINTABLE'           / binary table extension                         BITPIX  =                    8 / 8-bit bytes                                    NAXIS   =                    2 / 2-dimensional table                            NAXIS1  =                  233 / width of table in bytes                        NAXIS2  =                   26 / number of rows in table                        PCOUNT  =                    0 / size of special data area                      GCOUNT  =                    1 / one data group                                 TFIELDS =                   46 / number of columns                              EXTNAME = 'Joined  '           / table name                                     TTYPE1  = 'PKS     '           / label for column 1                             TFORM1  = '10A     '           / format for column 1                            TCOMM1  = 'Source name (JHHMM+DDMM)'                                            TUCD1   = 'meta.id;meta.main'                                                   TTYPE2  = 'S1.4    '           / label for column 2                             TFORM2  = 'E       '           / format for column 2                            TUNIT2  = 'Jy      '           / units for column 2                             TCOMM2  = '? 1.4GHz flux density from PKSCat90'                                 TUCD2   = 'phot.flux.density;em.radio.750-1500MHz'                              TTYPE3  = 'SED     '           / label for column 3                             TFORM3  = '3A      '           / format for column 3                            TCOMM3  = 'Plot the spectrum with SPECFIND (Vollmer et al. 2009, Cat. VIII/85)' TUCD3   = 'meta.ref.url'                                                        TTYPE4  = '_RAJ2000'           / label for column 4                             TFORM4  = 'D       '           / format for column 4                            TUNIT4  = 'deg     '           / units for column 4                             TUCD4   = 'pos.eq.ra'                                                           TTYPE5  = '_DEJ2000'           / label for column 5                             TFORM5  = 'D       '           / format for column 5                            TUNIT5  = 'deg     '           / units for column 5                             TUCD5   = 'pos.eq.dec'                                                          TTYPE6  = 'RAJ2000 '           / label for column 6                             TFORM6  = '11A     '           / format for column 6                            TUNIT6  = '"h:m:s" '           / units for column 6                             TCOMM6  = 'Right ascension (J2000)'                                             TUCD6   = 'pos.eq.ra;meta.main'                                                 TTYPE7  = 'DEJ2000 '           / label for column 7                             TFORM7  = '11A     '           / format for column 7                            TUNIT7  = '"d:m:s" '           / units for column 7                             TCOMM7  = 'Declination (J2000)'                                                 TUCD7   = 'pos.eq.dec;meta.main'                                                TTYPE8  = 'n_CG    '           / label for column 8                             TFORM8  = 'A       '           / format for column 8                            TCOMM8  = '{\bf S} indicates sources in the final sample'                       TUCD8   = 'meta.ref.url'                                                        TTYPE9  = 'CG      '           / label for column 9                             TFORM9  = 'A       '           / format for column 9                            TUCD9   = 'meta.code'                                                           TTYPE10 = 'k       '           / label for column 10                            TFORM10 = 'A       '           / format for column 10                           TCOMM10 = '[k] k for known CSS or GPS source previous to this work'             TUCD10  = 'meta.code'                                                           TTYPE11 = 'l_Rmag  '           / label for column 11                            TFORM11 = 'A       '           / format for column 11                           TCOMM11 = 'Limit flag on Rmag'                                                  TUCD11  = 'meta.code.error'                                                     TTYPE12 = 'Rmag    '           / label for column 12                            TFORM12 = 'E       '           / format for column 12                           TUNIT12 = 'mag     '           / units for column 12                            TCOMM12 = '? R band magnitude from SuperCOSMOS'                                 TUCD12  = 'phot.mag;em.opt.R'                                                   TTYPE13 = 'z       '           / label for column 13                            TFORM13 = 'E       '           / format for column 13                           TCOMM13 = '? Photometric or spectroscopic redshift'                             TUCD13  = 'src.redshift'                                                        TTYPE14 = 'n_z     '           / label for column 14                            TFORM14 = 'A       '           / format for column 14                           TCOMM14 = '[p] p for photometric redshift, else spectroscopic'                  TUCD14  = 'meta.note'                                                           TTYPE15 = 'ID      '           / label for column 15                            TFORM15 = 'A       '           / format for column 15                           TCOMM15 = '[GQ] Optical counterpart: Galaxy or Quasar'                          TUCD15  = 'src.class'                                                           TTYPE16 = 'SI1     '           / label for column 16                            TFORM16 = 'E       '           / format for column 16                           TUCD16  = 'spect.index;meta.modelled'                                           TTYPE17 = 'e_SI1   '           / label for column 17                            TFORM17 = 'E       '           / format for column 17                           TCOMM17 = '? rms uncertainty on SI1'                                            TUCD17  = 'stat.error'                                                          TTYPE18 = 'SI2     '           / label for column 18                            TFORM18 = 'E       '           / format for column 18                           TCOMM18 = '? Selection Spectral Index {alpha}^5^_2.7_ between 2.7 and 5GHz'     TUCD18  = 'spect.index;em.radio.3-6GHz'                                         TTYPE19 = 'Size    '           / label for column 19                            TFORM19 = 'E       '           / format for column 19                           TUNIT19 = 'kpc     '           / units for column 19                            TCOMM19 = '? Physical Size'                                                     TUCD19  = 'src.morph.scLength'                                                  TTYPE20 = 'S2.7    '           / label for column 20                            TFORM20 = 'E       '           / format for column 20                           TUNIT20 = 'Jy      '           / units for column 20                            TCOMM20 = '? 2.7GHz flux density from PKSCat90'                                 TUCD20  = 'phot.flux.density;em.radio.1500-3000MHz'                             TTYPE21 = 'S5      '           / label for column 21                            TFORM21 = 'E       '           / format for column 21                           TUNIT21 = 'Jy      '           / units for column 21                            TCOMM21 = '? 5GHz flux density from PKSCat90'                                   TUCD21  = 'phot.flux.density;em.radio.3-6GHz'                                   TTYPE22 = 'S8.4    '           / label for column 22                            TFORM22 = 'E       '           / format for column 22                           TUNIT22 = 'Jy      '           / units for column 22                            TCOMM22 = '? 8.4GHz flux density from PKSCat90'                                 TUCD22  = 'phot.flux.density;em.radio.6-12GHz'                                  TTYPE23 = 'S20     '           / label for column 23                            TFORM23 = 'E       '           / format for column 23                           TUNIT23 = 'Jy      '           / units for column 23                            TCOMM23 = '? 20GHz flux density from AT20G'                                     TUCD23  = 'phot.flux.density;em.radio.12-30GHz'                                 TTYPE24 = 'Simbad  '           / label for column 24                            TFORM24 = '6A      '           / format for column 24                           TCOMM24 = 'ask the {\bf\fg{FireBrick}Simbad} data-base about this object'       TUCD24  = 'meta.ref'                                                            TTYPE25 = 'Name    '           / label for column 25                            TFORM25 = '9A      '           / format for column 25                           TTYPE26 = 'RA_J2000_old'       / label for column 26                            TFORM26 = '10A     '           / format for column 26                           TUNIT26 = 'hms     '           / units for column 26                            TTYPE27 = 'RA_J2000'           / label for column 27                            TFORM27 = 'D       '           / format for column 27                           TUNIT27 = 'deg     '           / units for column 27                            TCOMM27 = '(hmsToDegrees($2))'                                                  TTYPE28 = 'Dec_J2000_old'      / label for column 28                            TFORM28 = '9A      '           / format for column 28                           TTYPE29 = 'Dec_J2000'          / label for column 29                            TFORM29 = 'D       '           / format for column 29                           TUNIT29 = 'deg     '           / units for column 29                            TCOMM29 = '(dmsToDegrees($3))'                                                  TTYPE30 = 'e_RAJ2000'          / label for column 30                            TFORM30 = '3A      '           / format for column 30                           TTYPE31 = 'e_DecJ2000'         / label for column 31                            TFORM31 = '3A      '           / format for column 31                           TTYPE32 = 'S408    '           / label for column 32                            TFORM32 = 'E       '           / format for column 32                           TTYPE33 = 'e_S408  '           / label for column 33                            TFORM33 = 'E       '           / format for column 33                           TTYPE34 = 'Separation_1'       / label for column 34                            TFORM34 = 'D       '           / format for column 34                           TUNIT34 = 'arcsec  '           / units for column 34                            TCOMM34 = 'Distance between matched objects along a great circle'               TUCD34  = 'pos.angDistance'                                                     TTYPE35 = 'RA      '           / label for column 35                            TFORM35 = 'D       '           / format for column 35                           TUNIT35 = 'deg     '           / units for column 35                            TCOMM35 = '(hmsToDegrees($1))'                                                  TTYPE36 = 'Dec     '           / label for column 36                            TFORM36 = 'D       '           / format for column 36                           TUNIT36 = 'deg     '           / units for column 36                            TCOMM36 = '(dmsToDegrees($2))'                                                  TTYPE37 = 'e_RA    '           / label for column 37                            TFORM37 = 'E       '           / format for column 37                           TTYPE38 = 'e_Dec   '           / label for column 38                            TFORM38 = 'E       '           / format for column 38                           TTYPE39 = 'Sp      '           / label for column 39                            TFORM39 = 'E       '           / format for column 39                           TTYPE40 = 'e_Sp    '           / label for column 40                            TFORM40 = 'E       '           / format for column 40                           TTYPE41 = 'St      '           / label for column 41                            TFORM41 = 'E       '           / format for column 41                           TTYPE42 = 'e_St    '           / label for column 42                            TFORM42 = 'E       '           / format for column 42                           TTYPE43 = 'MajAxis '           / label for column 43                            TFORM43 = 'E       '           / format for column 43                           TTYPE44 = 'MinAxis '           / label for column 44                            TFORM44 = 'E       '           / format for column 44                           TTYPE45 = 'PA      '           / label for column 45                            TFORM45 = 'E       '           / format for column 45                           TTYPE46 = 'Separation'         / label for column 46                            TFORM46 = 'D       '           / format for column 46                           TUNIT46 = 'arcsec  '           / units for column 46                            TCOMM46 = 'Distance between matched objects along a great circle'               TUCD46  = 'pos.angDistance'                                                     DATE-HDU= '2015-05-07T10:48:26' / Date of HDU creation (UTC)                    STILVERS= '3.0-9   '           / Version of STIL software                       STILCLAS= 'uk.ac.starlink.votable.FitsPlusTableWriter' / Author class in STIL soEND                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             J0024-4202@1ÎÖSED@∑AJM+,¿EdE#ˆ00 24 42.95-42 02 03.5SGk A°ôö?oﬂ; GøkÖ    øE∏Ap  @;Ö?ÏÃÕ?hı√>îz·Simbad0022-423 00:24:43.1@∑‰±~K-42:02:07¿EÉ˚rÍb.5 7  ?Tz·=è\)@Â¨˘ÈU@∑5Ó@+±¿EoıÃ?¿  ?ŸôöD“‡ BJÃÕD›@ BTffBÅôöBTÃÕBEôö?Ù†¢ZŒG|J0025-2602AÎÖSED@—÷åi/o¿:	o®.á”00 25 49.18-26 02 12.7SCk Añff>§›/ Gø
+=q    ø333@LÃÕ@æ{@hı√@	ôö?z·HSimbad0023-263 00:25:49.3@“Xø%ãÒ-26:02:14¿:	áeC ˇ.2 3  Aà  ?è\@ çùœOa¯      ¯      ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¯      J0116-2052@s◊
+SED@36ÊŸæL◊¿4ﬁT«éü01 16 51.47-20 52 06.5SCk A¨ÃÕ?¥z· GøBè\    øàı√@¿  @(ˆ?¢è\?#◊
+>u¬èSimbad0114-211 01:16:51.4@36”†m:-20:52:06¿4ﬁK‰±~.2 2  A*=q>kÖ?Ò§0Êú6~¯      ¯      ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¯      J0203-4349@*·HSED@>Îw[Å0¿EÍW˚iòJ02 03 40.75-43 49 50.9 Ck Aïôö>ÊffpGø:·H    øYôöA	ôö?ÁÆ?É◊
+?z·>kÖSimbad0201-440 02:03:40.8@>ÎÖ∏QÎ-43:49:52¿EÍaŸP»A.4 4  @≈p§>ä=q?ÛjS∫ùE@>ÎlãCïÄ¿EÍH\◊π?¿  ?ŸôöEw BÌ33EÑ® B˛ÃÕBÅôöBb  BÃÕ?¸Lêúæ;pJ0240-2309@åÃÕSED@DU⁄'(c¿7'Ñ#œÅ02 40 08.13-23 09 15.7SGk AÄÃÕ@E¢ Qø∏    øBè\A  @=q@U¬è@ÃÕ?fffSimbad0237-233 02:40:08.4@Dz·GÆ-23:09:15¿7'wwwwx.2 3  @j·H=·GÆ@o´s#£¯      ¯      ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¯      J0252-7104@≤·HSED@EòØˆ”0î¿Qƒﬁ~•¯M02 52 46.29-71 04 33.9SCk Aôôö?hs GøÇè\    øëÎÖ?ÃÃÕ@Z·H?ÿQÏ?LÃÕ>£◊
+Simbad0252-712 02:52:46.2@Eò£◊
+=p-71:04:32¿Qƒ’Ê¯	.6 4  AaGÆ>‹(ˆ?˛˝Ñ7>ì@Eò≤€—î$¿QƒÈR‘â?¿  ?ŸôöF| CÄ&fFÑ CÄ33B=33B4  ?åÃÕ@ÉØ-¥GJ0420-6223@P£◊SED@PN˙ÇË},¿O2l†<K
+04 20 56.17-62 23 38.2SCk>A¨  ?O\)pGøåÃÕ    øè\)A~ff?¯QÏ?n{>£◊>.{Simbad0420-625 04:20:56.3@POi–6ù-62:23:38¿O2jÛ|é.3 2  A8£◊>8QÏ?Ìòõê§±@PN˚ÁlãC¿O2gOjπ:?¿  ?ŸôöEØà C(Ä EØò C(ôöBHffB4ÃÕB£  ?„;!N√j#J0616-3456@,ÃÕSED@WâóxW)≥¿AxóÃ: 06 16 35.97-34 56 17.6SCk Aïôö>®r∞ Gø\)    ø!GÆAff?˙·H?ßÆ?GÆ>·GÆSimbad0614-349 06:16:36.2@Wâß@⁄t-34:56:15¿Ax     .3 4  @©GÆ>W
+=@«Xüúı@Wâî#®û¿Axìtºj?¿  ?ŸôöEgÄ BﬁffEgê BﬁffBô33B4  >LÃÕ?„Çƒ∑{tˆJ0943-0819@∏RSED@b<ÔIœVÎ¿ ¶MΩ¯Ù09 43 37.01-08 19 30.7SGk Aè33>ix’ GøGÆ    øJ=q@s33?›p§?è\)?@  >®ı√Simbad0941-080 09:43:37.4@b<¸ñ/…c-08:19:34¿ ¶¯	+<.2 3  @Üff=·GÆ@©∏y] ¯      ¯      ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¯      J1154-3505@√33SED@fRÁ¿nπ¿Aã≥¶ã§11 54 21.79-35 05 29.1SGk Aéff>Ñì Gø0£◊    ø(ı√?333@É◊
+@#◊
+?ı¬è?c◊
+Simbad1151-348 11:54:22.0@fRÓÓÓÓÓ-35:05:25¿Aãé8„é9.2 3  A.ff>ÃÃÕ@l+J1ì@fRÎÖ∏R¿Aãœ¬⁄?¿  ?ŸôöE·@ CXLÕEÈ† C`LÕBô33B<ffB…33@
+˙D˝Be≠J1218-4600@ì33SED@g’•πbç¿GÏkŒÖ12 18 06.26-46 00 30.2SCk Aó33?lã QøÆ    øQÎÖ@‹ÃÕ@S33@è\?¢è\?333Simbad1215-457 12:18:06.2@g”†m:-46:00:31¿G+<M^.4 4  Ap§>◊
+=?òXA`¢@gÃ	é≠¿G	»Ózm?¿  ?ŸôöEÃ¿ CDôöE‡® CW≥3BrffBX  BTff@ûÇ¯üNJ1223-4235@.∏RSED@g=…[ˇW¿EKœ‘ø	ñ12 23 43.40-42 35 32.2 Ck A{33>49X Gø!GÆ    øGÆ@∆ff?œ\)?åÃÕ?!GÆ>®ı√Simbad1221-423 12:23:43.5@g=ÃÃÃÃÕ-42:35:34¿EK‡$h¨Ò.2 3  @¢è\>∏@ ‡eÂîàπ@g=…ö˜ ¿EKƒ’Ê¯	?¿  ?ŸôöEB  B∫ffEB B∫ffBÅôöB4  C3ff?Ûeoâ:)’J1248-1959@úÃÕSED@h.∆ºËS¿3˝
+gbÈ12 48 23.87-19 59 18.4SGk A¢ff?£33 QøW
+=    øBè\AIôö@|(ˆ@·H?Æ{?0£◊Simbad1245-197 12:48:23.9@h/…b¸ñ-19:59:15¿3¸ÃÃÃÃÕ.2 2  A	¬è>#◊
+@FÍ®yÜC¯      ¯      ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¯      J1308-0950@àQÏSED@h•5?|Ìë¿#Ø;dZ¨13 08 39.06-09 50 32.1SCk Aïôö>Ìëh Gø
+=q    ø0£◊@,ÃÕ@8QÏ?£◊?é{?:·HSimbad1306-095 13:08:39.3@h•=p£◊
+-09:50:32¿#Ø7¿H—Z.2 3  @˙·H>.{@c,∂ÃŒk¯      ¯      ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¯      J1311-2216@ßÆSED@hΩ?––gå¿6G6&,∫s13 11 39.37-22 16 41.4SC  ¿  ?LÃÕ QøÖ∏    ø¶ffA|ÃÕ@Ö?û∏R>Êff>Bè\Simbad1308-220 13:11:39.5@hΩDDDDD-22:16:41¿6G.¶ï.2 3  A±Æ?ÃÕ?˝≥_|2 ¯      ¯      ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¯      J1323-4452@^{SED@iëèŸ˝¿Fp.3ÔÚ13 23 04.25-44 52 33.1SCk AîÃÕ?˘ôö Qø\(ˆ    øaGÆAà  ?Â∏?áÆ?∏>Ä  Simbad1320-446 13:23:04.6@iùi–6-44:52:34¿Fp$h¨Ò6.4 7  @›∏?ÃÕ@ò@)¥@iå°˝D¿FpÚì 9?¿  ?ŸôöEÄ0 Bˆ33EÉ` B¸ffBÅôöB]33C≥3?ˆ¥aÿˇ
+rJ1526-1351@ôöSED@l˜ÌÂKH‘¿+≥7!’<ﬁ15 26 59.47-13 51 00.1SCk AúÃÕ?◊Ôû Qø∏    øz·@Yôö?Ÿôö?ßÆ?QÎÖ>«ÆSimbad1524-136 15:26:59.5@l˜ÓÓÓÓ-13:51:01¿+≥Wõ‡$i.2 3  @√Ö>ä=q?Ô›ﬁ3]Lﬂ¯      ¯      ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¯      J1744-5144¿  SED@p°≤ÍÚ¿Iﬂ}È9Í›17 44 25.43-51 44 45.7 Gk A¶ff?!GÆpGøÎÖ    ø8QÏ>ÃÃÕ@ì33@yôö@Æ?û∏RSimbad1740-517 17:44:25.2@p°Æz·H-51:44:42¿Iﬂ\(ı¬è.3 2  @¨(ˆ=ı¬è@ﬁ´[õ@p°≤∞ ƒú¿Iﬂf,%Q∞?¿  ?ŸôöE‰  C[  E˛∏ CtÄ BdffBIôöBøÃÕ@‡…ÇJ1818-5158@`  SED@q(yR“4Ï¿I¸ ƒõ•„18 18 07.11-51 58 11.1SCk ¿  >ı¬èpQø¶ff    ø¡GÆAÄÃÕ?ÃÃÕ?8QÏ>¬è\=è\)Simbad1814-519 18:18:06.8@q(tß@€-51:58:09¿I¸ß@⁄u.2 2  Ad(ˆ>è\)@XC¨!‰g@q(w ÿg¿I¸æ<á†?¿  ?ŸôöE∏Ë C1Ä E∏ C1ôöBdffB4  B∂ff@¬¡‚·‹J1819-6345AUp§SED@q.U'Â!W¿O·∂√vˆ18 19 34.99-63 45 48.2SCk Ayôö=Äh‹ Gø\(ˆ    økÖ?   AÃÕ@§z·@<ÃÕ?⁄·HSimbad1814-637 18:19:35.1@q.W
+=p•-63:45:47¿O·´Õ4.4 4  B  ?´Ö?ˆãÆLzo@q.Vìt¿O·∫^5?~?¿  ?ŸôöFò` DFfFõ\ D&fBHffB>ÃÕBTÃÕ?‡îÛl
+;ÌJ1830-3602@„◊
+SED@q[Ïﬂ&k•¿BXbM”18 30 58.88-36 02 30.3SGk Aaôö=ı¬èpGøº(ˆ    ø´Ö@Yôö@bè\?®ı√?è\>\)Simbad1827-360 18:30:59.0@q[ÓÓÓÓÔ-36:02:35¿BÇÿ-Çÿ.2 3  AŒ£◊?J=q@±:Çö.@q[ÎIπ¿BUUUUT?¿  ?ŸôöFI8 C¡33FID C¡33Bô33B4  ?333?ı∫r∏»ÛJ1939-6342AÉ33SED@rmß≈¨G¿O€5“I‰P19 39 24.83-63 42 45.3SGk Aå  >;dZ Gø¶ff    øÇè\>LÃÕA8  @µ∏@@  ?u¬èSimbad1934-638 19:39:25.3@rmØ…b¸ñ-63:42:44¿O€*ˆÊ.4 4  @«Æ>LÃÕ@ :7L@rm±’¨∂Ù¿O€']˙˛g?¿  ?ŸôöFQ  C»¶fFhl DÕBWôöB:ÃÕC≥3@ÁÎ®Ò J1957-4222@P  SED@rµH©º˝¿E/•„S˜œ19 57 15.31-42 22 20.1SCk AÑ  ?QÎÖpQøn{    øs33As33?Û33?kÖ>‹(ˆ>ôöSimbad1953-425 19:57:15.3@rµ∏QÏ-42:22:19¿E/õ‡$h≠.4 8  A"{?s33?ÒÆü]Ä¶ª@rµ>g¿E/§KR&?¿  ?ŸôöE£x CÊfE£à C  BÅôöB4  ?   ?ır2•GŸﬂJ2011-0644@&ffSED@rÏÚ⁄/≠¿ÔÁ®mr20 11 14.23-06 44 03.4 Gk A¨  ?1 Gø=p§    ø:·H>LÃÕ@¬è?∏QÏ?E∏>Ωp§Simbad2008-068 20:11:14.0@rÏÓÓÓÓÔ-06:44:07¿Ï®d‹.2 4  ?Í=q=£◊
+@÷Ïs8Ä&¯      ¯      ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¯      J2137-2042¿  SED@tGU∞5ΩQ¿4µp£◊
+=21 37 50.02-20 42 31.5 Ck Aöff?"–Â GøÎÖ    øQÎÖ?Ÿôö@\)?∆ff?Bè\>—ÎÖSimbad2135-209 21:37:50.2@tGXø%ãÛ-20:42:37¿4µ‘√≤°ê.3 4  A(ˆ>◊
+=@0ôôÄ¯      ¯      ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¯      J2152-2828@0  SED@tÄ@≠Ÿ©¿<yÇÕ_ö21 52 03.79-28 28 28.7SC  Aôôö>ı?} Gø
+=    ø+ÖA>ff?˝p§?†  ?@  >Ωp§Simbad2149-287 21:52:03.8@tÄ@⁄tß-28:28:31¿<y´Õ3.3 11 @µ¬è?5¬è@fñGN|w¯      ¯      ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¿  ¯                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
