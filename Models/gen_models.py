@@ -14,11 +14,12 @@ filelist = glob.glob("*.fits")
 for f in filelist:
     os.remove(f)
 
-VLSSr_sources=['3C444', 'HerA', '3C353', 'VirA','HydA','3C33', '3C161', 'PKS0442-28']
+VLSSr_sources=['3C444', 'HerA', '3C353', 'VirA','HydA','3C33', '3C161', 'PKS0442-28', 'Crab']
 SUMSS_sources=['PKS2356-61', 'PKS2153-69', 'PKS0408-65', 'PKS0410-75']
 VLA333_sources=['PicA']
+SUMSS_deconv_sources=['CenA']
 
-sources=VLSSr_sources+SUMSS_sources+VLA333_sources
+sources=VLSSr_sources+SUMSS_sources+VLA333_sources+SUMSS_deconv_sources
 
 spec={}
 pos={}
@@ -30,13 +31,18 @@ spec['3C353']=-0.85
 spec['3C33']=-0.85
 spec['VirA']=-0.86
 spec['HydA']=-0.83
-spec['PicA']=-0.97
+spec['PicA']=-0.97 # This is definitely wrong at low frequencies!
 spec['PKS2356-61']=-0.85
 spec['PKS2153-69']=-0.85
-spec['PKS0408-65']=-0.85
+spec['PKS0408-65']=-0.85 # This is almost certainly wrong, as this source appears to be flattening at lower frequencies
 spec['PKS0410-75']=-0.85
 spec['3C161']=-0.85
 spec['PKS0442-28']=-0.85
+spec['CenA']=-0.497 
+# CenA: in http://ned.ipac.caltech.edu/cgi-bin/ex_refcode?refcode=1981A%26AS...45..367K
+# this basically refers to what it is in NED, so 80 MHz: 1544, 160 MHz: 1094
+# derived spectral index: -0.497
+spec['Crab']=-0.30 # Hurley-Walker 2009
 
 # Not used in the script, but could be scripted to grab from postage stamp server
 pos['3C444']='22 14 25.752 -17 01 36.29'
@@ -53,6 +59,29 @@ pos['3C33']=['01 08 52.854 +13 20 13.75']
 pos['3C161']=['06 27 10.0960 -05 53 04.768']
 pos['PKS0442-28']=['04 44 37.707 -28 09 54.41']
 
+# RW's deconvolved CenA image
+f0=843 #MHz
+
+for source in SUMSS_deconv_sources:
+  print source
+  model='templates/'+source+'_SUMSSd.fits'
+
+# Only include real sources
+  exp='iif(IM0>=0.033,IM0/((150/'+str(f0)+')^('+str(spec[source])+')),0.0)'
+  outname=source+'.im'
+  outspec=source+'_spec_index.im'
+  immath(imagename=[model],mode='evalexpr',expr=exp,outfile='new.im')
+  exp='iif(IM0>=0.033,'+(str(spec[source]))+'*(IM0/IM0),0.0)'
+  immath(imagename=[model],mode='evalexpr',expr=exp,outfile='newspec.im')
+
+  ia.open('new.im')
+  ia.adddegaxes(outfile=outname,spectral=True,stokes='I')
+  ia.close()
+  ia.open('newspec.im')
+  ia.adddegaxes(outfile=outspec,spectral=True,stokes='I')
+  ia.close()
+  rmtables('new*')
+
 # VLSSr
 f0=74 #MHz
 psf_rad='75arcsec' # beam in stamp headers
@@ -62,7 +91,8 @@ psf_vol=pix_area/(1.1331*qa.convert(psf_rad,radians)['value']*qa.convert(psf_rad
 
 for source in VLSSr_sources:
   print source
-  exp=str(psf_vol)+'*IM0*((150/'+str(f0)+')^('+str(spec[source])+'))'
+# Only include real sources
+  exp='iif(IM0>=2.0,'+str(psf_vol)+'*IM0*((150/'+str(f0)+')^('+str(spec[source])+')),0.0)'
   model='templates/'+source+'_VLSS.fits'
   outname=source+'.im'
   outspec=source+'_spec_index.im'
